@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
 import _ from 'lodash';
-import { Task } from './Task';
 import Tasks from '/imports/api/tasks';
-import { TaskForm } from './TaskForm';
+import { LinksCollection } from '../imports/api/links'
 import { LoginForm } from './LoginForm'
+import { TaskForm } from './TaskForm';
+import { Task } from './Task';
 
 const toggleChecked = ({ _id, isChecked }) => {
   Tasks.update(_id, {
@@ -17,6 +18,7 @@ const toggleChecked = ({ _id, isChecked }) => {
 const deleteTask = ({ _id }) => Tasks.remove(_id);
 
 export const App = () => {
+  const tasks = useTracker(() => LinksCollection.find({}).fetch());
   const filter = {};
 
   const [hideCompleted, setHideCompleted] = useState(false);
