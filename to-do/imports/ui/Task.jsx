@@ -1,23 +1,16 @@
 import React from 'react';
-import classnames from 'classnames';
 
 export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
-  const classes = classnames('task', {
-    'checked': Boolean(task.isChecked)
-  });
-
   return (
-    <li className={classes}>
-      <button onClick={() => onDeleteClick(task)}>&times;</button>
-      <span>{task.text}</span>
+    <li>
       <input
         type="checkbox"
-        checked={Boolean(task.isChecked)}
+        checked={!!task.isChecked}
         onClick={() => onCheckboxClick(task)}
         readOnly
       />
       <span>{task.text}</span>
+      <button onClick={ () => onDeleteClick(task) }>&times;</button>
     </li>
   );
 };
-
