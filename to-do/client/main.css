@@ -58,8 +58,7 @@ button:focus {
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  background: rgba(255, 15, 50, 0.9);
   padding: 20px 15px 15px 15px;
   position: relative;
   box-shadow: 0 3px 3px rgba(34, 25, 25, 0.4);
@@ -137,24 +136,28 @@ li > button {
 }
 
 
-.login-form {
+#login-form {
   display: flex;
   flex-direction: column;
   height: 100%;
 
   justify-content: center;
   align-items: center;
+
 }
 
-.login-form > div {
-  margin: 8px;
-}
 
-.login-form > div > label {
+#login-form > div > div> label{
   font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+#login-form .field-form .field + .field {
+  margin-top: 20px;
 }
 
-.login-form > div  > input {
+
+#login-form > div > div > input {
   flex-grow: 1;
   box-sizing: border-box;
   padding: 10px 6px;
@@ -166,17 +169,46 @@ li > button {
   margin-top: 4px;
 }
 
-.login-form > div > input:focus {
+#login-form > div > div > input:focus {
   outline: 0;
 }
 
-.login-form > div > button {
+#login-form > div> div > button {
+  margin-top: 10px;
   background-color: #62807e;
+}
+
+#login-form .field-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+  background: rgba(255, 15, 50, 0.9);
+  width: 350px;
+  height: 450px;
+
+}
+
+#login-form .field-form div label {
+  margin-top: 50px;
 }
 
 .user {
   display: flex;
   align-self: flex-end;
   margin: 8px 16px 0;
+  font-weight: bold;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+
   font-weight: bold;
 }
