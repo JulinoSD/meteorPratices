@@ -5,9 +5,9 @@ import { TasksCollection } from '/imports/db/TasksCollection';
 if (Meteor.isServer) {
   describe('Tasks', () => {
     describe('methods', () => {
+      let taskId
       const userId = Random.id();
-      let taskId;
-
+      
       beforeEach(() => {
         TasksCollection.remove({});
         taskId = TasksCollection.insert({
